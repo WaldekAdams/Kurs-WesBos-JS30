@@ -9,8 +9,37 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+body{
+  position: relative;
+  background-color: rgb(187, 187, 146);
+  min-height: 100vh;
+}
+.box{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 350px;
+  height: 500px;
+  border: 1px solid black;
+  &--title{
+    text-align: center;
+    flex-basis: 15%;
+  }
+  &--items{
+    flex-basis: 60%;
+  }
+&--form{
+  flex-basis: 25%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-body {
-  color: $yellow;
-  background: $violet;
+}
+&--btn{
+  margin-left: 10px;
+}
 }
