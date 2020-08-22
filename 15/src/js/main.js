@@ -19,4 +19,8 @@ if ('serviceWorker' in navigator) {
 
 console.log(`Hello world!`);
 
+const btn = document.querySelector('.box--btn');
+const inputTxt = document.querySelector('.box--text');
+const ulList = document.querySelector('box--items');
 
+inputTxt.addEventListener('keyup',(e) => console.log(e.target.value))

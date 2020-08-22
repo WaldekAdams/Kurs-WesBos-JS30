@@ -31,6 +31,9 @@ body{
   &--items{
     flex-basis: 60%;
   }
+  &--item{
+    list-style: none;
+  }
 &--form{
   flex-basis: 25%;
   text-align: center;
