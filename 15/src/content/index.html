@@ -33,7 +33,20 @@
     <link rel="stylesheet" href="css/main.css" />
   </head>
   <body>
-    <h1>Hello world - with simple PWA support!</h1>
+    <div class="box">
+<h1 class="box--title">Local Tapas</h1>
+<ul class="box--items">
+  <li class="box--item">
+   <input type="checkbox" id="item0">
+   <label for="item0">shrimps</label> 
+  </li>
+</ul>
+<form class="box--form" action="submit">
+  <input type="text" name="item" placeholder="Item name" required>
+  <input type="submit" value="+add Item">
+</form>
+
+    </div>
 
     <script src="js/main.js"></script>
   </body>
