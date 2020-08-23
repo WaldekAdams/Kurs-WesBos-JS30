@@ -21,16 +21,27 @@ console.log(`Hello world!`);
 
 const btn = document.querySelector('.box--btn');
 const inputTxt = document.querySelector('.box--text');
+const form = document.querySelector('.box--form')
 const ulList = document.querySelector('.box--items');
+const items = [];
 let item = "";
+
 
 inputTxt.addEventListener('keyup',(e) => {
  item = e.target.value;
 })
-btn.addEventListener('click', ()=>{
 
-let li = document.createElement('li');
-li.textContent =item;
-ulList.appendChild(li);
+function addItem(e){
+ e.preventDefault();
+let text = this.querySelector('[name=item]').value;
+const item = {
+  text: text ,
+  done: false
+}
+items.push(item);
+console.table(items)
+this.reset()
 
-})
+}
+
+form.addEventListener('submit', addItem)
