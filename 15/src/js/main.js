@@ -24,12 +24,9 @@ const inputTxt = document.querySelector('.box--text');
 const form = document.querySelector('.box--form')
 const ulList = document.querySelector('.box--items');
 const items = [];
-let item = "";
 
 
-inputTxt.addEventListener('keyup',(e) => {
- item = e.target.value;
-})
+
 
 function addItem(e){
  e.preventDefault();
@@ -40,8 +37,21 @@ const item = {
 }
 items.push(item);
 console.table(items)
+populateList(items, ulList)
 this.reset()
+}
 
+
+function populateList(plates = [], platesList){
+  platesList.innerHTML = plates.map((plate,i)=>{
+    return `
+   <li>
+   <input type="checkbox" id="item${i}" data-index="${i}" ${plate.done ? `checked`: ''}/>
+   <lable for="item${i}">${plate.text}</lable>
+   
+   </li>
+  `
+  }).join('')
 }
 
 form.addEventListener('submit', addItem)
