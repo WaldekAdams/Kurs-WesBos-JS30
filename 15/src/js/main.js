@@ -23,7 +23,7 @@ const btn = document.querySelector('.box--btn');
 const inputTxt = document.querySelector('.box--text');
 const form = document.querySelector('.box--form')
 const ulList = document.querySelector('.box--items');
-const items = [];
+const items = JSON.parse(localStorage.getItem('items')) || [];
 
 
 
@@ -36,8 +36,9 @@ const item = {
   done: false
 }
 items.push(item);
-console.table(items)
-populateList(items, ulList)
+console.table(items);
+populateList(items, ulList);
+localStorage.setItem('items',JSON.stringify(items))
 this.reset()
 }
 
@@ -54,4 +55,5 @@ function populateList(plates = [], platesList){
   }).join('')
 }
 
-form.addEventListener('submit', addItem)
+form.addEventListener('submit', addItem);
+populateList(items, ulList)
