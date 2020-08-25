@@ -54,6 +54,21 @@ function populateList(plates = [], platesList){
   `
   }).join('')
 }
+function toggleDone (e){
+  
+  if(!e.target.matches('input')) return;
+  console.log(e.target);
+  let li = e.target;
+  let liIndex = li.dataset.index;
+  console.log(liIndex);
+  items[liIndex].done = !items[liIndex].done;
+  localStorage.setItem('items',JSON.stringify(items));
+  populateList(items, ulList);
+  
+  // console.table(items)
+
+}
 
 form.addEventListener('submit', addItem);
+ulList.addEventListener('click', toggleDone)
 populateList(items, ulList)
