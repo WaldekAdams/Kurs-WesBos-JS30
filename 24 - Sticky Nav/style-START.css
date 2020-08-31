@@ -49,6 +49,11 @@ nav {
   position: relative;
   z-index: 1;
 }
+.fixed-nav nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 nav ul {
   margin: 0;
