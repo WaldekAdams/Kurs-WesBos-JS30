@@ -227,21 +227,28 @@
   function handleEnter(){
 // console.log('enter');
    this.classList.add('trigger-enter');
-   setTimeout(()=>this.classList.add('trigger-enter-active'),150);
+   setTimeout(()=> {  
+     if(this.classList.contains('trigger-enter')){
+      this.classList.add('trigger-enter-active')
+     }
+    },150);
    background.classList.add('open');
    
    const dropdown = this.querySelector('.dropdown');
   //  console.log(dropdown);
    const dropdownCords = dropdown.getBoundingClientRect();
+   const navCords = nav.getBoundingClientRect();
   //  console.log(dropdownCords);
   const cords = {
     width: dropdownCords.width,
     height:dropdownCords.height,
-    top: dropdownCords.top,
-    left:dropdownCords.left
+    top:dropdownCords.top - navCords.top,     
+    left:dropdownCords.left - navCords.left,     
   }
+
   background.style.setProperty('width', `${cords.width}` + 'px');
   background.style.setProperty('height', `${cords.height}` + 'px');
+  background.style.setProperty('transform',`translate(${cords.left}px,${cords.top}px)`)
   // console.log(cords);
   }
   function handleLeave(){
