@@ -51,6 +51,14 @@
    lastHole = hole;
    return hole;
   }
+  function peep(){
+    const time = randTime(300,1000);
+    const hole = randHole(holes);
+    hole.classList.add('up');
+    setTimeout(()=>{
+      hole.classList.remove('up');
+    },time)
+  }
 
 </script>
 </body>
