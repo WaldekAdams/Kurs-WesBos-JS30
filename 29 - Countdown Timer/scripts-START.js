@@ -17,5 +17,7 @@ function timer (seconds){
 }
 function displayTimeLeft(seconds){
     console.log(seconds);
+    const minutes = Math.floor(seconds/60);
+    const remeinderSeconds = minutes % 60;
 
 }
