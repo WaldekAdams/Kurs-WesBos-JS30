@@ -8,6 +8,7 @@ function timer(seconds) {
     const then = now + seconds * 1000;
     displayTimeLeft(seconds);
     displayEndTime(then);
+    clearInterval(countdown);
 
     countdown = setInterval(() => {
         const secondsLeft = Math.round((then - Date.now()) / 1000);
@@ -38,7 +39,8 @@ function displayEndTime(timestamp) {
 }
 
 function startTimer() {
-    console.log('ok')
+    const seconds = parseInt(this.dataset.time);
+    timer(seconds);
 }
 
 buttons.forEach(button => button.addEventListener('click', startTimer))
