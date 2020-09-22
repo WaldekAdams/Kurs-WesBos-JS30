@@ -13,3 +13,18 @@ function tooglePlay() {
         video.pause();
     }
 }
+
+function updateButton() {
+    const icon = this.paused ? '►' : '❚ ❚';
+    toogle.textContent = icon;
+    console.log(icon)
+}
+
+
+
+
+
+video.addEventListener('click', tooglePlay);
+video.addEventListener('play', updateButton);
+video.addEventListener('pause', updateButton);
+toogle.addEventListener('click', tooglePlay);
