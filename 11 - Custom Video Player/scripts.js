@@ -17,9 +17,12 @@ function tooglePlay() {
 function updateButton() {
     const icon = this.paused ? '►' : '❚ ❚';
     toogle.textContent = icon;
-    console.log(icon)
+    // console.log(icon)
 }
 
+function skip() {
+    console.log('ok')
+}
 
 
 
@@ -28,3 +31,4 @@ video.addEventListener('click', tooglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
 toogle.addEventListener('click', tooglePlay);
+skipButtons.forEach(button => button.addEventListener('click', skip))
