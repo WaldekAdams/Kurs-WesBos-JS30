@@ -42,6 +42,12 @@ function handleProgress() {
     // console.log(Math.floor(video.currentTime), video.duration);
 }
 
+function scrub(e) {
+    // console.log(e);
+    const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+    video.currentTime = scrubTime;
+}
+
 video.addEventListener('click', tooglePlay);
 video.addEventListener('play', updateButton);
 video.addEventListener('pause', updateButton);
@@ -56,3 +62,4 @@ ranges.forEach(range => range.addEventListener('mousedown', () => {
 ranges.forEach(range => range.addEventListener('mouseup', () => {
     isHandle = false
 }));
+progress.addEventListener('click', scrub)
