@@ -62,4 +62,4 @@ ranges.forEach(range => range.addEventListener('mousedown', () => {
 ranges.forEach(range => range.addEventListener('mouseup', () => {
     isHandle = false
 }));
-progress.addEventListener('click', scrub)
+progress.addEventListener('click', scrub);
