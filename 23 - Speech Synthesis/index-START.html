@@ -51,6 +51,12 @@
       msg.voice = voices.find(voice => voice.name === this.value);
     }
 
+    function toogle(startOver = true) {
+      speechSynthesis.cancel();
+      if (startOver) {
+        speechSynthesis.speak(msg);
+      }
+    }
 
     speechSynthesis.addEventListener('voiceschanged', populateVoices);
     voicesDropdown.addEventListener('change', setVoice);
