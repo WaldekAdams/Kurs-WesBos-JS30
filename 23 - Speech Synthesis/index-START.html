@@ -41,7 +41,10 @@
 
     function populateVoices() {
       voices = this.getVoices();
-      console.log(voices)
+      // console.log(voices)
+      voicesDropdown.innerHTML = voices
+        .map(voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</options>`)
+        .join('');
     }
 
 
