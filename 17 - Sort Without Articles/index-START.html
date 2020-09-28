@@ -56,6 +56,15 @@
       return bandName.replace(/^(a |the |an )/i, '').trim();
     }
     // console.log(strip('the dupa'));
+
+    const sortedBands = bands.sort(function (a, b) {
+      if (strip(a) > strip(b)) {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
+    console.log(sortedBands)
   </script>
 
 </body>
